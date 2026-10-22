@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Explore how linear regression, random forests, and gradient boosting make predictions."
+    />
+    <meta name="theme-color" content="#f5f3ed" />
+    <title>Explain the Model — Three ways to predict</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="./" aria-label="Explain the Model home">
+        <span class="wordmark-mark" aria-hidden="true">E</span>
+        <span>Explain the Model</span>
+      </a>
+      <span class="header-note">A hands-on guide to regression</span>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="eyebrow-line"></span> THREE MODELS, ONE QUESTION</p>
+        <h1 id="page-title">How does a model<br />arrive at its <em>guess?</em></h1>
+        <p class="intro-copy">
+          Pick a model. Follow how it turns a person's information into a number.
+          Each one takes a very different route.
+        </p>
+
+        <div class="selection-panel">
+          <div class="selection-heading">
+            <span class="selection-step">01</span>
+            <span>Choose an example</span>
+            <span class="selection-hint">The same people are available in every section</span>
+          </div>
+          <div class="selection-controls">
+            <label class="field">
+              <span class="field-label">DATASET</span>
+              <select id="dataset-select" aria-label="Choose a dataset" disabled>
+                <option>Loading datasets…</option>
+              </select>
+            </label>
+            <label class="field">
+              <span class="field-label">EXAMPLE PERSON</span>
+              <select id="person-select" aria-label="Choose an example person" disabled>
+                <option>Loading people…</option>
+              </select>
+            </label>
+            <p id="person-description" class="person-description" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+
+      <nav class="model-nav" aria-label="Regression model explainers">
+        <a href="#linear" data-section="linear">
+          <span class="nav-number">01</span>
+          <span class="nav-label">Push &amp; Pull</span>
+          <span class="nav-model">LINEAR REGRESSION</span>
+        </a>
+        <a href="#forest" data-section="forest">
+          <span class="nav-number">02</span>
+          <span class="nav-label">Wisdom of the Forest</span>
+          <span class="nav-model">RANDOM FOREST</span>
+        </a>
+        <a href="#boosting" data-section="boosting">
+          <span class="nav-number">03</span>
+          <span class="nav-label">One Correction at a Time</span>
+          <span class="nav-model">GRADIENT BOOSTING</span>
+        </a>
+      </nav>
+
+      <div id="app-content" aria-live="polite" aria-busy="true">
+        <div class="loading-state"><span class="loader" aria-hidden="true"></span>Loading model outputs…</div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <span>Three models. Three ways to make a prediction.</span>
+      <a href="https://snsie.github.io/regression-activity/" target="_blank" rel="noreferrer">
+        About this activity <span aria-hidden="true">↗</span>
+      </a>
+    </footer>
+  </body>
+</html>

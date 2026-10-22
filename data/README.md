@@ -37,6 +37,10 @@ Three real health datasets from the CDC's National Health and Nutrition Examinat
 
 Height is left out on purpose, so the models have to learn how lung size changes with age.
 
+## Supplied model outputs
+
+The fitted model outputs used by the explainer are in [`outputs/`](./outputs/). They were supplied with the [Explain the Model activity starter](https://github.com/snsie/regression-activity/tree/main/starter/outputs); the app reads these precomputed values and does not retrain the models. See the activity's [output schema](https://github.com/snsie/regression-activity/blob/main/starter/outputs/SCHEMA.md) for field definitions.
+
 **Sources:**
 - CDC/NCHS, NHANES 2017–2018 and 2011–2012 public-use files.
 - Prepared with the regression-app's `pipeline/datasets.py`. `manifest.json` records the source commit, versions and row counts.
