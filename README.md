@@ -1,8 +1,20 @@
 # Explain the Model
 
+**Public app:** [Open Explain the Model](https://nplat15.github.io/Model-Competition/)
+
+- [Push & Pull](https://nplat15.github.io/Model-Competition/#linear)
+- [Wisdom of the Forest](https://nplat15.github.io/Model-Competition/#forest)
+- [One Correction at a Time](https://nplat15.github.io/Model-Competition/#boosting)
+
 A static, interactive explainer for three supplied regression models. Visitors can choose any section, dataset, and example person; the app uses the precomputed model outputs rather than retraining models in the browser.
 
 The **Push & Pull** section also lets visitors edit numeric inputs and choose categorical values to see the linear prediction change. The forest and boosting sections remain tied to the supplied example people.
+
+## Viewer takeaways
+
+- **Push & Pull:** My viewer should walk away knowing that a linear model starts at a reference prediction and adds each feature's signed push to arrive at one person's prediction.
+- **Wisdom of the Forest:** My viewer should walk away knowing that a random forest averages the guesses of many different trees, each learned from different samples and feature choices.
+- **One Correction at a Time:** My viewer should walk away knowing that gradient boosting adds small corrections to earlier predictions and that validation error can guide when to stop.
 
 ## Run locally
 
