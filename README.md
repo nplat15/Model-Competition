@@ -1,12 +1,10 @@
 # Explain the Model
 
-**Public app:** [Open Explain the Model](https://nplat15.github.io/Model-Competition/)
+**Public app:** Not deployed yet. Deploy `streamlit_app.py` on Streamlit Community Cloud, then put the generated app URL here.
 
-- [Push & Pull](https://nplat15.github.io/Model-Competition/#linear)
-- [Wisdom of the Forest](https://nplat15.github.io/Model-Competition/#forest)
-- [One Correction at a Time](https://nplat15.github.io/Model-Competition/#boosting)
+Direct section links use the deployed URL with `?section=linear`, `?section=forest`, or `?section=boosting`.
 
-A static, interactive explainer for three supplied regression models. Visitors can choose any section, dataset, and example person; the app uses the precomputed model outputs rather than retraining models in the browser.
+A Streamlit interactive explainer for three supplied regression models. Visitors can choose any section, dataset, and example person; the app uses precomputed model outputs rather than retraining models.
 
 The **Push & Pull** section also lets visitors edit numeric inputs and choose categorical values to see the linear prediction change. The forest and boosting sections remain tied to the supplied example people.
 
@@ -18,17 +16,23 @@ The **Push & Pull** section also lets visitors edit numeric inputs and choose ca
 
 ## Run locally
 
-Serve the repository root over HTTP, then open the local URL. For example:
+Install the dependencies and run the Streamlit entry point from the repository root:
 
 ```powershell
-py -m http.server 8000
+py -m pip install -r requirements.txt
+py -m streamlit run streamlit_app.py
 ```
 
-Open <http://localhost:8000>. The app loads `data/datasets.json` and the matching JSON file in `data/outputs/`. Opening `index.html` directly as a `file:` URL will not work because browsers restrict `fetch()` for local files.
+Streamlit opens the app at <http://localhost:8501>. The app loads `data/datasets.json` and the matching JSON file in `data/outputs/`.
 
-## Publish
+## Deploy on Streamlit Community Cloud
 
-The app is plain HTML, CSS, and JavaScript and can be hosted from the repository root with GitHub Pages. In the repository's GitHub settings, enable Pages and select the `main` branch and `/ (root)` as the source.
+1. Push this repository to GitHub.
+2. In Streamlit Community Cloud, create an app from this repository and select the `main` branch.
+3. Set **Main file path** to `streamlit_app.py` (the file is at the repository root).
+4. Deploy. Streamlit installs the packages listed in `requirements.txt`.
+
+The existing `index.html`, `app.js`, and `style.css` are the separate static-site version; Streamlit runs `streamlit_app.py` instead.
 
 ## Data and model outputs
 
